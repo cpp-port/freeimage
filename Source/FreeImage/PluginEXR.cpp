@@ -36,7 +36,7 @@
 #include "../openexr/IlmImf/ImfChannelList.h"
 #include "../openexr/IlmImf/ImfRgba.h"
 #include "../openexr/IlmImf/ImfArray.h"
-#include "../openexr/IlmImf/ImfPreviewImage.h"
+#include "../openexr/IlmImf/ImfThumbnailImage.h"
 #include "../openexr/Half/half.h"
 
 
@@ -307,22 +307,22 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 		dib = FreeImage_AllocateHeaderT(header_only, image_type, width, height, 0);
 		if(!dib) THROW (Iex::NullExc, FI_MSG_ERROR_MEMORY);
 
-		// try to load the preview image
+		// try to load the thumbnail image
 		// --------------------------------------------------------------
 
-		if(file.header().hasPreviewImage()) {
-			const Imf::PreviewImage& preview = file.header().previewImage();
-			const unsigned thWidth = preview.width();
-			const unsigned thHeight = preview.height();
+		if(file.header().hasThumbnailImage()) {
+			const Imf::ThumbnailImage& thumbnail = file.header().thumbnailImage();
+			const unsigned thWidth = thumbnail.width();
+			const unsigned thHeight = thumbnail.height();
 			
 			FIBITMAP* thumbnail = FreeImage_Allocate(thWidth, thHeight, 32);
 			if(thumbnail) {
-				const Imf::PreviewRgba *src_line = preview.pixels();
+				const Imf::ThumbnailRgba *src_line = thumbnail.pixels();
 				BYTE *dst_line = FreeImage_GetScanLine(thumbnail, thHeight - 1);
 				const unsigned dstPitch = FreeImage_GetPitch(thumbnail);
 				
 				for (unsigned y = 0; y < thHeight; ++y) {
-					const Imf::PreviewRgba *src_pixel = src_line;
+					const Imf::ThumbnailRgba *src_pixel = src_line;
 					RGBQUAD* dst_pixel = (RGBQUAD*)dst_line;
 					
 					for(unsigned x = 0; x < thWidth; ++x) {
@@ -444,10 +444,10 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 }
 
 /**
-Set the preview image using the dib embedded thumbnail
+Set the thumbnail image using the dib embedded thumbnail
 */
 static BOOL
-SetPreviewImage(FIBITMAP *dib, Imf::Header& header) {
+SetThumbnailImage(FIBITMAP *dib, Imf::Header& header) {
 	if(!FreeImage_GetThumbnail(dib)) {
 		return FALSE;
 	}
@@ -460,17 +460,17 @@ SetPreviewImage(FIBITMAP *dib, Imf::Header& header) {
 		const unsigned thWidth = FreeImage_GetWidth(thumbnail);
 		const unsigned thHeight = FreeImage_GetHeight(thumbnail);
 		
-		Imf::PreviewImage preview(thWidth, thHeight);
+		Imf::ThumbnailImage thumbnail(thWidth, thHeight);
 
-		// copy thumbnail to 32-bit RGBA preview image
+		// copy thumbnail to 32-bit RGBA thumbnail image
 		
 		const BYTE* src_line = FreeImage_GetScanLine(thumbnail, thHeight - 1);
-		Imf::PreviewRgba* dst_line = preview.pixels();
+		Imf::ThumbnailRgba* dst_line = thumbnail.pixels();
 		const unsigned srcPitch = FreeImage_GetPitch(thumbnail);
 		
 		for (unsigned y = 0; y < thHeight; y++) {
 			const RGBQUAD* src_pixel = (RGBQUAD*)src_line;
-			Imf::PreviewRgba* dst_pixel = dst_line;
+			Imf::ThumbnailRgba* dst_pixel = dst_line;
 			
 			for(unsigned x = 0; x < thWidth; x++) {
 				dst_pixel->r = src_pixel->rgbRed;
@@ -486,7 +486,7 @@ SetPreviewImage(FIBITMAP *dib, Imf::Header& header) {
 			dst_line += thWidth;
 		}
 		
-		header.setPreviewImage(preview);
+		header.setThumbnailImage(thumbnail);
 	}
 
 	return TRUE;
@@ -610,7 +610,7 @@ Save(FreeImageIO *io, FIBITMAP *dib, fi_handle handle, int page, int flags, void
 			Imf::INCREASING_Y, compress);        		
 
 		// handle thumbnail
-		SetPreviewImage(dib, header);
+		SetThumbnailImage(dib, header);
 		
 		// check for EXR_LC compression
 		if((flags & EXR_LC) == EXR_LC) {

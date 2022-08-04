@@ -231,7 +231,7 @@ libraw_ConvertProcessedRawToDib(LibRaw *RawProcessor)
 Convert a processed raw image to a FIBITMAP
 @param image Processed raw image
 @return Returns the converted dib if successfull, returns NULL otherwise
-@see libraw_LoadEmbeddedPreview
+@see libraw_LoadEmbeddedThumbnail
 */
 static FIBITMAP *
 libraw_ConvertProcessedImageToDib(libraw_processed_image_t *image)
@@ -300,13 +300,13 @@ libraw_ConvertProcessedImageToDib(libraw_processed_image_t *image)
 }
 
 /**
-Get the embedded JPEG preview image from RAW picture with included Exif Data.
+Get the embedded JPEG thumbnail image from RAW picture with included Exif Data.
 @param RawProcessor Libraw handle
 @param flags JPEG load flags
 @return Returns the loaded dib if successfull, returns NULL otherwise
 */
 static FIBITMAP *
-libraw_LoadEmbeddedPreview(LibRaw *RawProcessor, int flags)
+libraw_LoadEmbeddedThumbnail(LibRaw *RawProcessor, int flags)
 {
    FIBITMAP *dib = NULL;
    libraw_processed_image_t *thumb_image = NULL;
@@ -820,10 +820,10 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data)
       else if((flags & RAW_PREVIEW) == RAW_PREVIEW)
       {
          // try to get the embedded JPEG
-         dib = libraw_LoadEmbeddedPreview(RawProcessor, 0);
+         dib = libraw_LoadEmbeddedThumbnail(RawProcessor, 0);
          if(!dib)
          {
-            // no JPEG preview: try to load as 8-bit/sample (i.e. RGB 24-bit)
+            // no JPEG thumbnail: try to load as 8-bit/sample (i.e. RGB 24-bit)
             dib = libraw_LoadRawData(RawProcessor, 8);
          }
       }
@@ -847,7 +847,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data)
       // try to get JPEG embedded Exif metadata
       if(dib && !((flags & RAW_PREVIEW) == RAW_PREVIEW))
       {
-         FIBITMAP *metadata_dib = libraw_LoadEmbeddedPreview(RawProcessor, FIF_LOAD_NOPIXELS);
+         FIBITMAP *metadata_dib = libraw_LoadEmbeddedThumbnail(RawProcessor, FIF_LOAD_NOPIXELS);
          if(metadata_dib)
          {
             FreeImage_CloneMetadata(dib, metadata_dib);

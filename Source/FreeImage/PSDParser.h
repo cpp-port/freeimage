@@ -177,7 +177,7 @@ public:
 
 /**
 Table 2-5: Thumbnail resource header
-Adobe Photoshop 5.0 and later stores thumbnail information for preview
+Adobe Photoshop 5.0 and later stores thumbnail information for thumbnail
 display in an image resource block. These resource blocks consist of an initial
 28 byte header, followed by a JFIF thumbnail in RGB (red, green, blue) order
 for both Macintosh and Windows. Adobe Photoshop 4.0 stored the

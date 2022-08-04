@@ -113,7 +113,7 @@ typedef DWORD IFF_ID;
 #define ID_CMYK     MAKE_ID('C', 'M', 'Y', 'K')     /* Cyan, Magenta, Yellow, & Black color map (Soft-Logik) */
 #define ID_CNAM     MAKE_ID('C', 'N', 'A', 'M')     /* Color naming chunk (Soft-Logik) */
 #define ID_PCHG     MAKE_ID('P', 'C', 'H', 'G')     /* Line by line palette control information (Sebastiano Vigna) */
-#define ID_PRVW     MAKE_ID('P', 'R', 'V', 'W')     /* A mini duplicate ILBM used for preview (Gary Bonham) */
+#define ID_PRVW     MAKE_ID('P', 'R', 'V', 'W')     /* A mini duplicate ILBM used for thumbnail (Gary Bonham) */
 #define ID_XBMI     MAKE_ID('X', 'B', 'M', 'I')     /* eXtended BitMap Information (Soft-Logik) */
 #define ID_CTBL     MAKE_ID('C', 'T', 'B', 'L')     /* Newtek Dynamic Ham color chunk */
 #define ID_DYCP     MAKE_ID('D', 'Y', 'C', 'P')     /* Newtek Dynamic Ham chunk */

@@ -733,7 +733,7 @@ typedef void (DLL_CALLCONV *FI_InitProc)(Plugin *plugin, int format_id);
 #define PSD_LAB				2		//! reads tags for CIELab (default is conversion to RGB)
 #define RAS_DEFAULT         0
 #define RAW_DEFAULT         0		//! load the file as linear RGB 48-bit
-#define RAW_PREVIEW			1		//! try to load the embedded JPEG preview with included Exif Data or default to RGB 24-bit
+#define RAW_PREVIEW			1		//! try to load the embedded JPEG thumbnail with included Exif Data or default to RGB 24-bit
 #define RAW_DISPLAY			2		//! load the file as RGB 24-bit
 #define RAW_HALFSIZE		4		//! output a half-size color image
 #define RAW_UNPROCESSED		8		//! output a FIT_UINT16 raw Bayer image
