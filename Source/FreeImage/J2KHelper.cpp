@@ -2,7 +2,7 @@
 // JPEG2000 helpers
 //
 // Design and implementation by
-// - Herv� Drolon (drolon@infonie.fr)
+// - Herv� Drolon (drolon@infonie.fr)
 //
 // This file is part of FreeImage 3
 //
@@ -148,11 +148,11 @@ FIBITMAP* J2KImageToFIBITMAP(int format_id, const opj_image_t *image, BOOL heade
    {
       // compute image width and height
 
-      //int w = int_ceildiv(image->x1 - image->x0, image->comps[0].dx);
+      //int w = int_ceildiv(image->x1 - image->x0, image->comps[0].Δx);
       int wr = image->comps[0].w;
       int wrr = int_ceildivpow2(image->comps[0].w, image->comps[0].factor);
 
-      //int h = int_ceildiv(image->y1 - image->y0, image->comps[0].dy);
+      //int h = int_ceildiv(image->y1 - image->y0, image->comps[0].Δy);
       //int hr = image->comps[0].h;
       int hrr = int_ceildivpow2(image->comps[0].h, image->comps[0].factor);
 
@@ -163,8 +163,8 @@ FIBITMAP* J2KImageToFIBITMAP(int format_id, const opj_image_t *image, BOOL heade
       BOOL bIsValid = TRUE;
       for(int c = 0; c < numcomps - 1; c++)
       {
-         if(	(image->comps[c].dx == image->comps[c+1].dx) &&
-               (image->comps[c].dy == image->comps[c+1].dy) &&
+         if(	(image->comps[c].Δx == image->comps[c+1].Δx) &&
+               (image->comps[c].Δy == image->comps[c+1].Δy) &&
                (image->comps[c].prec == image->comps[c+1].prec) )
          {
             continue;
@@ -549,8 +549,8 @@ opj_image_t* FIBITMAPToJ2KImage(int format_id, FIBITMAP *dib, const opj_cparamet
       memset(&cmptparm[0], 0, 4 * sizeof(opj_image_cmptparm_t));
       for(int i = 0; i < numcomps; i++)
       {
-         cmptparm[i].dx = parameters->subsampling_dx;
-         cmptparm[i].dy = parameters->subsampling_dy;
+         cmptparm[i].Δx = parameters->subsampling_dx;
+         cmptparm[i].Δy = parameters->subsampling_dy;
          cmptparm[i].w = w;
          cmptparm[i].h = h;
          cmptparm[i].prec = prec;

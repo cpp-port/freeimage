@@ -600,10 +600,10 @@ Save(FreeImageIO *io, FIBITMAP *dib, fi_handle handle, int page, int flags, void
 		// create the header
 		int width  = FreeImage_GetWidth(dib);
 		int height = FreeImage_GetHeight(dib);
-		int dx = 0, dy = 0;
+		int Δx = 0, Δy = 0;
 
 		Imath::Box2i dataWindow (Imath::V2i (0, 0), Imath::V2i (width - 1, height - 1));
-		Imath::Box2i displayWindow (Imath::V2i (-dx, -dy), Imath::V2i (width - dx - 1, height - dy - 1));
+		Imath::Box2i displayWindow (Imath::V2i (-Δx, -Δy), Imath::V2i (width - Δx - 1, height - Δy - 1));
 
 		Imf::Header header = Imf::Header(displayWindow, dataWindow, 1, 
 			Imath::V2f(0,0), 1, 

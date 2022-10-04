@@ -2,7 +2,7 @@
 // FreeImage 3 Test Script
 //
 // Design and implementation by
-// - Hervé Drolon (drolon@infonie.fr)
+// - Hervï¿½ Drolon (drolon@infonie.fr)
 //
 // This file is part of FreeImage 3
 //
@@ -39,7 +39,7 @@ static BOOL testLoadThumbnail(const char *lpszPathName, int flags) {
 
 		unsigned t_width = FreeImage_GetWidth(thumbnail);
 		unsigned t_height = FreeImage_GetHeight(thumbnail);
-		printf("... %s contains a thumbnail whose size is %dx%d\n", lpszPathName, t_width, t_height);
+		printf("... %s contains a thumbnail whose size is %Î”x%d\n", lpszPathName, t_width, t_height);
 		
 		FreeImage_Unload(dib); 
 
