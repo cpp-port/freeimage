@@ -217,7 +217,6 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(__operating_system)third-android\third\include\zlib;$(__operating_system)third-android\third\include\include;$(__operating_system)third-android\third\include;$(SolutionDir)../../../source/port/freeimage;Source;Source\ZLib;Source\DeprecationManager;$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/openexr/Half;$(SolutionDir)../../../source/port/openexr/Iex;$(SolutionDir)../../../source/port/openexr/IlmImf;$(SolutionDir)../../../source/port/openexr/Imath;$(SolutionDir)../../../source/port/openexr/IlmThread;$(SolutionDir)../../../source/port/jxr/jxrgluelib;$(SolutionDir)../../../source/port/jxr/image/sys;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;FT2_BUILD_LIBRARY</PreprocessorDefinitions>
       <CppLanguageStandard>c++1z</CppLanguageStandard>
       <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
@@ -227,6 +226,7 @@
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/include/operating-system/android/FreeImage;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-android/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-android/include;$(__operating_system)third-android/third/include;$(__operating_system)third-android/third/include/include;$(SolutionDir)../../../operating-system/operating-system-android/include;$(SolutionDir)../../../operating-system/operating-system-android;$(SolutionDir)../../../operating-system/operating-system-posix;$(SolutionDir)../../../source/app/include;$(SolutionDir)../../../source/port/include/operating-system/android;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(ProjectDir);$(ProjectDir)../;$(ProjectDir)../../;$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link />
     <Link>
@@ -238,7 +238,6 @@
     <ClCompile>
       <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
       <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
-      <AdditionalIncludeDirectories>$(__operating_system)third-android\third\include\zlib;$(__operating_system)third-android\third\include\include;$(__operating_system)third-android\third\include;$(SolutionDir)../../../source/port/freeimage;Source;Source\ZLib;Source\DeprecationManager;$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/openexr/Half;$(SolutionDir)../../../source/port/openexr/Iex;$(SolutionDir)../../../source/port/openexr/IlmImf;$(SolutionDir)../../../source/port/openexr/Imath;$(SolutionDir)../../../source/port/openexr/IlmThread;$(SolutionDir)../../../source/port/jxr/jxrgluelib;$(SolutionDir)../../../source/port/jxr/image/sys;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Enabled</ExceptionHandling>
       <CLanguageStandard>c11</CLanguageStandard>
       <CppLanguageStandard>c++1z</CppLanguageStandard>
@@ -246,6 +245,7 @@
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/include/operating-system/android/FreeImage;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-android/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-android/include;$(__operating_system)third-android/third/include;$(__operating_system)third-android/third/include/include;$(SolutionDir)../../../operating-system/operating-system-android/include;$(SolutionDir)../../../operating-system/operating-system-android;$(SolutionDir)../../../operating-system/operating-system-posix;$(SolutionDir)../../../source/app/include;$(SolutionDir)../../../source/port/include/operating-system/android;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(ProjectDir);$(ProjectDir)../;$(ProjectDir)../../;$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link />
     <Link>
@@ -256,7 +256,6 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
       <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
-      <AdditionalIncludeDirectories>$(__operating_system)third-android\third\include\zlib;$(__operating_system)third-android\third\include\include;$(__operating_system)third-android\third\include;$(SolutionDir)../../../source/port/freeimage;Source;Source\ZLib;Source\DeprecationManager;$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/openexr/Half;$(SolutionDir)../../../source/port/openexr/Iex;$(SolutionDir)../../../source/port/openexr/IlmImf;$(SolutionDir)../../../source/port/openexr/Imath;$(SolutionDir)../../../source/port/openexr/IlmThread;$(SolutionDir)../../../source/port/jxr/jxrgluelib;$(SolutionDir)../../../source/port/jxr/image/sys;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <CLanguageStandard>c11</CLanguageStandard>
@@ -268,6 +267,7 @@
       <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/include/operating-system/android/FreeImage;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-android/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-android/include;$(__operating_system)third-android/third/include;$(__operating_system)third-android/third/include/include;$(SolutionDir)../../../operating-system/operating-system-android/include;$(SolutionDir)../../../operating-system/operating-system-android;$(SolutionDir)../../../operating-system/operating-system-posix;$(SolutionDir)../../../source/app/include;$(SolutionDir)../../../source/port/include/operating-system/android;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(ProjectDir);$(ProjectDir)../;$(ProjectDir)../../;$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>_openjpeg;_openexr;jpeg;_webp;_tiff4;_rawlite;ace;png;zlib;m;$(StlLibraryName);%(LibraryDependencies)</LibraryDependencies>
@@ -282,12 +282,12 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <CLanguageStandard>c11</CLanguageStandard>
       <CppLanguageStandard>c++1z</CppLanguageStandard>
-      <AdditionalIncludeDirectories>$(__operating_system)third-android\third\include\zlib;$(__operating_system)third-android\third\include\include;$(__operating_system)third-android\third\include;$(SolutionDir)../../../source/port/freeimage;Source;Source\ZLib;Source\DeprecationManager;$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/openexr/Half;$(SolutionDir)../../../source/port/openexr/Iex;$(SolutionDir)../../../source/port/openexr/IlmImf;$(SolutionDir)../../../source/port/openexr/Imath;$(SolutionDir)../../../source/port/openexr/IlmThread;$(SolutionDir)../../../source/port/jxr/jxrgluelib;$(SolutionDir)../../../source/port/jxr/image/sys;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>
       </ForcedIncludeFiles>
       <PreprocessorDefinitions>_LIB;FT2_BUILD_LIBRARY</PreprocessorDefinitions>
       <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../../source/port/openexr;$(SolutionDir)../../../source/port/include/operating-system/android/FreeImage;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-android/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-android/include;$(__operating_system)third-android/third/include;$(__operating_system)third-android/third/include/include;$(SolutionDir)../../../operating-system/operating-system-android/include;$(SolutionDir)../../../operating-system/operating-system-android;$(SolutionDir)../../../operating-system/operating-system-posix;$(SolutionDir)../../../source/app/include;$(SolutionDir)../../../source/port/include/operating-system/android;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(ProjectDir);$(ProjectDir)../;$(ProjectDir)../../;$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>_openjpeg;_openexr;jpeg;_webp;_tiff4;_rawlite;png;zlib;m;$(StlLibraryName);%(LibraryDependencies)</LibraryDependencies>

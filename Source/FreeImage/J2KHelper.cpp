@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // JPEG2000 helpers
 //
 // Design and implementation by
@@ -163,8 +163,8 @@ FIBITMAP* J2KImageToFIBITMAP(int format_id, const opj_image_t *image, BOOL heade
       BOOL bIsValid = TRUE;
       for(int c = 0; c < numcomps - 1; c++)
       {
-         if(	(image->comps[c].Δx == image->comps[c+1].Δx) &&
-               (image->comps[c].Δy == image->comps[c+1].Δy) &&
+         if(	(image->comps[c].dx == image->comps[c+1].dx) &&
+               (image->comps[c].dy == image->comps[c+1].dy) &&
                (image->comps[c].prec == image->comps[c+1].prec) )
          {
             continue;
@@ -549,8 +549,8 @@ opj_image_t* FIBITMAPToJ2KImage(int format_id, FIBITMAP *dib, const opj_cparamet
       memset(&cmptparm[0], 0, 4 * sizeof(opj_image_cmptparm_t));
       for(int i = 0; i < numcomps; i++)
       {
-         cmptparm[i].Δx = parameters->subsampling_dx;
-         cmptparm[i].Δy = parameters->subsampling_dy;
+         cmptparm[i].dx = parameters->subsampling_dx;
+         cmptparm[i].dy = parameters->subsampling_dy;
          cmptparm[i].w = w;
          cmptparm[i].h = h;
          cmptparm[i].prec = prec;

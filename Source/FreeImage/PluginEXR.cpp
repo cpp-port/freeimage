@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // EXR Loader and writer
 //
 // Design and implementation by 
@@ -28,16 +28,16 @@
 #pragma warning (disable : 4800) // ImfVersion.h - 'const int' : forcing value to bool 'true' or 'false' (performance warning)
 #endif 
 
-#include "../openexr/IlmImf/ImfIO.h"
-#include "../openexr/Iex/Iex.h"
-#include "../openexr/IlmImf/ImfOutputFile.h"
-#include "../openexr/IlmImf/ImfInputFile.h"
-#include "../openexr/IlmImf/ImfRgbaFile.h"
-#include "../openexr/IlmImf/ImfChannelList.h"
-#include "../openexr/IlmImf/ImfRgba.h"
-#include "../openexr/IlmImf/ImfArray.h"
-#include "../openexr/IlmImf/ImfThumbnailImage.h"
-#include "../openexr/Half/half.h"
+#include "IlmImf/ImfIO.h"
+#include "Iex/Iex.h"
+#include "IlmImf/ImfOutputFile.h"
+#include "IlmImf/ImfInputFile.h"
+#include "IlmImf/ImfRgbaFile.h"
+#include "IlmImf/ImfChannelList.h"
+#include "IlmImf/ImfRgba.h"
+#include "IlmImf/ImfArray.h"
+#include "IlmImf/ImfThumbnailImage.h"
+#include "Half/half.h"
 
 
 // ==========================================================
