@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // HDR Loader and writer
 //
 // Design and implementation by 
@@ -208,7 +208,7 @@ rgbe_ReadHeader(FreeImageIO *io, fi_handle handle, unsigned *width, unsigned *he
 	else {
 		header_info->valid |= RGBE_VALID_PROGRAMTYPE;
 		for(i = 0; i < sizeof(header_info->programtype) - 1; i++) {
-			if((buf[i+2] == 0) || character_isspace(buf[i+2]))
+			if((buf[i+2] == 0) || isspace(buf[i+2]))
 				break;
 			header_info->programtype[i] = buf[i+2];
 		}

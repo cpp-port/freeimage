@@ -315,11 +315,11 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 			const unsigned thWidth = thumbnail.width();
 			const unsigned thHeight = thumbnail.height();
 			
-			FIBITMAP* thumbnail = FreeImage_Allocate(thWidth, thHeight, 32);
-			if(thumbnail) {
+			FIBITMAP* fibitmap = FreeImage_Allocate(thWidth, thHeight, 32);
+			if(fibitmap) {
 				const Imf::ThumbnailRgba *src_line = thumbnail.pixels();
-				BYTE *dst_line = FreeImage_GetScanLine(thumbnail, thHeight - 1);
-				const unsigned dstPitch = FreeImage_GetPitch(thumbnail);
+				BYTE *dst_line = FreeImage_GetScanLine(fibitmap, thHeight - 1);
+				const unsigned dstPitch = FreeImage_GetPitch(fibitmap);
 				
 				for (unsigned y = 0; y < thHeight; ++y) {
 					const Imf::ThumbnailRgba *src_pixel = src_line;
@@ -336,8 +336,8 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 					src_line += thWidth;
 					dst_line -= dstPitch;
 				}
-				FreeImage_SetThumbnail(dib, thumbnail);
-				FreeImage_Unload(thumbnail);
+				FreeImage_SetThumbnail(dib, fibitmap);
+				FreeImage_Unload(fibitmap);
 			}
 		}
 
@@ -451,22 +451,22 @@ SetThumbnailImage(FIBITMAP *dib, Imf::Header& header) {
 	if(!FreeImage_GetThumbnail(dib)) {
 		return FALSE;
 	}
-	FIBITMAP* thumbnail = FreeImage_GetThumbnail(dib);
+	FIBITMAP* fibitmap = FreeImage_GetThumbnail(dib);
 
-	if((FreeImage_GetImageType(thumbnail) != FIT_BITMAP) || (FreeImage_GetBPP(thumbnail) != 32)) {
+	if((FreeImage_GetImageType(fibitmap) != FIT_BITMAP) || (FreeImage_GetBPP(fibitmap) != 32)) {
 		// invalid thumbnail - ignore it
 		FreeImage_OutputMessageProc(s_format_id, FI_MSG_WARNING_INVALID_THUMBNAIL);
 	} else {
-		const unsigned thWidth = FreeImage_GetWidth(thumbnail);
-		const unsigned thHeight = FreeImage_GetHeight(thumbnail);
+		const unsigned thWidth = FreeImage_GetWidth(fibitmap);
+		const unsigned thHeight = FreeImage_GetHeight(fibitmap);
 		
 		Imf::ThumbnailImage thumbnail(thWidth, thHeight);
 
 		// copy thumbnail to 32-bit RGBA thumbnail image
 		
-		const BYTE* src_line = FreeImage_GetScanLine(thumbnail, thHeight - 1);
+		const BYTE* src_line = FreeImage_GetScanLine(fibitmap, thHeight - 1);
 		Imf::ThumbnailRgba* dst_line = thumbnail.pixels();
-		const unsigned srcPitch = FreeImage_GetPitch(thumbnail);
+		const unsigned srcPitch = FreeImage_GetPitch(fibitmap);
 		
 		for (unsigned y = 0; y < thHeight; y++) {
 			const RGBQUAD* src_pixel = (RGBQUAD*)src_line;

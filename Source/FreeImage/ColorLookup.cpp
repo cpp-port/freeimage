@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // X11 and SVG Color name lookup
 //
 // Design and implementation by
@@ -75,7 +75,7 @@ FreeImage_LookupNamedColor(const char *szColor, const NamedColor *color_array, i
     // make lower case name, squezze white space
 
     for (i = 0; szColor[i] && i < sizeof(color) - 1; i++) {
-		if (character_isspace(szColor[i])) {
+		if (isspace(szColor[i])) {
             continue;
 		}
 		if (isupper(szColor[i])) {
