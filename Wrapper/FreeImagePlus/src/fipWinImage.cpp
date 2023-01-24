@@ -307,7 +307,7 @@ BOOL fipWinImage::captureWindow(HWND hWndApplicationWindow, HWND hWndSelectedWin
 	RECT r;
 
 	// Get window size
-	get_window_rect(hWndSelectedWindow, &r);
+	window_rectangle(hWndSelectedWindow, &r);
 
 	// Check if the window is out of the screen or maximixed
 	xshift = 0;
