@@ -1,9 +1,9 @@
-// ==========================================================
+ï»¿// ==========================================================
 // FreeImage implementation
 //
 // Design and implementation by
 // - Floris van den Berg (flvdberg@wxs.nl)
-// - Hervé Drolon (drolon@infonie.fr)
+// - Hervï¿½ Drolon (drolon@infonie.fr)
 // - Karl-Heinz Bussian (khbussian@moss.de)
 //
 // This file is part of FreeImage 3
@@ -20,7 +20,7 @@
 //
 // Use at your own risk!
 // ==========================================================
-
+#include "config.h"
 
 #ifdef _WIN32
 #include <windows.h>

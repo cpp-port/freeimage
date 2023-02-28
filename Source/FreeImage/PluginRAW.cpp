@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // RAW camera image loader
 //
 // Design and implementation by
@@ -18,7 +18,7 @@
 //
 // Use at your own risk!
 // ==========================================================
-
+#include "config.h"
 #include "rawlite/libraw/libraw.h"
 
 #include "FreeImage.h"

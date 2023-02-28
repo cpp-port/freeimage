@@ -1,4 +1,4 @@
-// =====================================================================
+﻿// =====================================================================
 // FreeImage Plugin Interface
 //
 // Design and implementation by
@@ -21,7 +21,7 @@
 //
 // Use at your own risk!
 // =====================================================================
-
+#include "config.h"
 #ifdef _MSC_VER 
 #pragma warning (disable : 4786) // identifier was truncated to 'number' characters
 #endif

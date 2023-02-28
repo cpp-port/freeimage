@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // JPEG Loader and writer
 // Based on code developed by The Independent JPEG Group
 //
@@ -27,7 +27,7 @@
 // ==========================================================
 
 
-#include "operating_system/third_private_config.h"
+#include "config.h"
 
 
 #ifdef _MSC_VER

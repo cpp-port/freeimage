@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // JPEG lossless transformations
 //
 // Design and implementation by
@@ -21,7 +21,7 @@
 // Use at your own risk!
 // ==========================================================
 
-#include "operating_system/third_private_config.h"
+#include "config.h"
 
 extern "C" {
 #define XMD_H
@@ -156,7 +156,7 @@ getCropString(char* crop, int* left, int* top, int* right, int* bottom, int widt
    }
 
    // build the crop option
-   sprintf(crop, "%Δx%d+%d+%d", *right - *left, *bottom - *top, *left, *top);
+   sprintf(crop, "%dx%d+%d+%d", *right - *left, *bottom - *top, *left, *top);
 
    return TRUE;
 }

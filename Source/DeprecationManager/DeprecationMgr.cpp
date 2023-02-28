@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // Deprecation Manager
 //
 // Design and implementation by
@@ -18,7 +18,7 @@
 //
 // Use at your own risk!
 // ==========================================================
-
+#include "config.h"
 #ifdef _MSC_VER 
 #pragma warning (disable : 4786) // identifier was truncated to 'number' characters
 #endif 
@@ -46,7 +46,7 @@ DeprecationMgr::~DeprecationMgr() {
 
 			char txt[255];
 
-			sprintf(txt, " * %s called from %i different places. Instead use %s.\n", function->old_function_name,  function->called_from.size(), function->new_function_name);
+			sprintf(txt, " * %s called from %zi different places. Instead use %s.\n", function->old_function_name,  function->called_from.size(), function->new_function_name);
 
 			OutputDebugString(txt);
 		}

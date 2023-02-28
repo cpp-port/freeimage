@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // G3 Fax Loader
 //
 // Design and implementation by
@@ -19,7 +19,7 @@
 //
 // Use at your own risk!
 // ==========================================================
-#include "operating_system/third_private_config.h"
+#include "config.h"
 #include "../tiff4/tiffiop.h"
 
 #include "FreeImage.h"

@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // FreeImage 3
 //
 // Design and implementation by
@@ -26,7 +26,7 @@
 #ifndef FREEIMAGE_H
 #define FREEIMAGE_H
 
-#include "operating_system/third_private_config.h"
+#include "config.h"
 
 // Version information ------------------------------------------------------
 
