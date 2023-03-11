@@ -28,16 +28,16 @@
 #pragma warning (disable : 4800) // ImfVersion.h - 'const int' : forcing value to bool 'true' or 'false' (performance warning)
 #endif 
 
-#include "IlmImf/ImfIO.h"
-#include "Iex/Iex.h"
-#include "IlmImf/ImfOutputFile.h"
-#include "IlmImf/ImfInputFile.h"
-#include "IlmImf/ImfRgbaFile.h"
-#include "IlmImf/ImfChannelList.h"
-#include "IlmImf/ImfRgba.h"
-#include "IlmImf/ImfArray.h"
-#include "IlmImf/ImfThumbnailImage.h"
-#include "Half/half.h"
+#include "openexr/ImfIO.h"
+#include "openexr/Iex.h"
+#include "openexr/ImfOutputFile.h"
+#include "openexr/ImfInputFile.h"
+#include "openexr/ImfRgbaFile.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfRgba.h"
+#include "openexr/ImfArray.h"
+#include "openexr/ImfThumbnailImage.h"
+#include "openexr/half.h"
 
 
 // ==========================================================

@@ -1,4 +1,4 @@
-// ==========================================================
+﻿// ==========================================================
 // FreeImage 3
 //
 // Design and implementation by
@@ -25,6 +25,8 @@
 
 #ifndef FREEIMAGE_H
 #define FREEIMAGE_H
+
+#include "config.h"
 
 // Version information ------------------------------------------------------
 
@@ -139,6 +141,10 @@ FI_STRUCT (FIMULTIBITMAP) { void *data; };
 #endif
 #ifndef NULL
 #define NULL 0
+#endif
+
+#ifndef WINBOOL
+#define WINBOOL int
 #endif
 
 #ifndef SEEK_SET
