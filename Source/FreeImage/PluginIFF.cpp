@@ -74,7 +74,7 @@ typedef DWORD IFF_ID;
 
 #define MAKE_ID(a, b, c, d)         ((IFF_ID)(a)<<24 | (IFF_ID)(b)<<16 | (IFF_ID)(c)<<8 | (IFF_ID)(d))
 
-#define ID_FORM     MAKE_ID('F', 'O', 'R', 'M')     /* EA IFF 85 group identifier */
+#define id_form     MAKE_ID('F', 'O', 'R', 'M')     /* EA IFF 85 group identifier */
 #define ID_CAT      MAKE_ID('C', 'A', 'T', ' ')     /* EA IFF 85 group identifier */
 #define ID_LIST     MAKE_ID('L', 'I', 'S', 'T')     /* EA IFF 85 group identifier */
 #define ID_PROP     MAKE_ID('P', 'R', 'O', 'P')     /* EA IFF 85 group identifier */
@@ -166,7 +166,7 @@ Validate(FreeImageIO *io, fi_handle handle) {
 	SwapLong(&type);
 #endif
 
-	if(type != ID_FORM)
+	if(type != id_form)
 		return FALSE;
 		
 	// skip 4 bytes
@@ -207,7 +207,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data) {
 		SwapLong(&type);
 #endif
 
-		if(type != ID_FORM)
+		if(type != id_form)
 			return NULL;
 
 		io->read_proc(&size, 4, 1, handle);
