@@ -161,6 +161,7 @@ add_library(${PROJECT_NAME} SHARED ${library_source})
 target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/FreeImage)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating_system/operating_system-${OPERATING_SYSTEM_LOWERED_NAME}/configuration/FreeImage)
 
 #add_library(${PROJECT_NAME}_static STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
 set_target_properties(${PROJECT_NAME} PROPERTIES DEFINE_SYMBOL FREEIMAGE_DLL)
