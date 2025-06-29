@@ -259,7 +259,7 @@ WuQuantizer::Vol( Box *cube, LONG *mmt )
 // and with the specified new upper bound.
 
 
-// Compute part of Vol(cube, mmt) that doesn't depend on r1, g1, or b1
+// Compute part of Vol(graphics3d, mmt) that doesn't depend on r1, g1, or b1
 // (depending on dir)
 
 LONG
@@ -291,7 +291,7 @@ WuQuantizer::Bottom(Box *cube, BYTE dir, LONG *mmt)
 }
 
 
-// Compute remainder of Vol(cube, mmt), substituting pos for
+// Compute remainder of Vol(graphics3d, mmt), substituting pos for
 // r1, g1, or b1 (depending on dir)
 
 LONG
