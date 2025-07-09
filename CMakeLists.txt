@@ -19,7 +19,7 @@ project(freeimage CXX)
 #enable_testing()
 
 if (MSVC)
-    set(CMAKE_DEBUG_POSTFIX "d")
+    #set(CMAKE_DEBUG_POSTFIX "d")
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
     add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -156,6 +156,8 @@ list(APPEND library_references
         openexr
         openjpeg
         tiff4
+        zlib
+        rawlite
 )
 
 
