@@ -76,30 +76,30 @@ Standard Library was detected. It uses a typical _Node structure to
 declare an estimated memory consumption for a node.
 */
 
-#if defined(_CPPLIB_VER)	// Microsoft C++ Standard Library
-/**
- The Microsoft C++ Standard Library uses the protected structure _Node
- of class std::_Tree_nod to represent a node. This class is used by
- std::_Tree, the base class of std::map. So, since std::map is derived
- from std::_Tree (and _Node is protected), we can get access to this
- structure by deriving from std::map.
-
- Additionally, the Microsoft C++ Standard Library uses a separately
- allocated end node for its balanced red-black tree so, actually, there
- are size() + 1 nodes present in memory.
-
- With all that in place, the total memory for all nodes in std::map
- is simply (node_count + 1) * sizeof(_Node).
-*/
-template<class _Maptype>
-class MapIntrospector: private _Maptype {
-public:
-	static size_t GetNodesMemorySize(size_t node_count) {
-		return (node_count + 1) * sizeof(_Node);
-	}
-};
-
-#elif defined(__GLIBCXX__)	// GNU Standard C++ Library v3, libstdc++-v3
+// #if defined(_CPPLIB_VER)	// Microsoft C++ Standard Library
+// /**
+//  The Microsoft C++ Standard Library uses the protected structure _Node
+//  of class std::_Tree_nod to represent a node. This class is used by
+//  std::_Tree, the base class of std::map. So, since std::map is derived
+//  from std::_Tree (and _Node is protected), we can get access to this
+//  structure by deriving from std::map.
+//
+//  Additionally, the Microsoft C++ Standard Library uses a separately
+//  allocated end node for its balanced red-black tree so, actually, there
+//  are size() + 1 nodes present in memory.
+//
+//  With all that in place, the total memory for all nodes in std::map
+//  is simply (node_count + 1) * sizeof(_Node).
+// */
+// template<class _Maptype>
+// class MapIntrospector: private _Maptype {
+// public:
+// 	static size_t GetNodesMemorySize(size_t node_count) {
+// 		return (node_count + 1) * sizeof(_Node);
+// 	}
+// };
+//
+#if defined(__GLIBCXX__)	// GNU Standard C++ Library v3, libstdc++-v3
 /**
  The GNU Standard C++ Library v3 uses structure std::_Rb_tree_node<_Val>,
  which is publicly declared in the standard namespace. Its value type

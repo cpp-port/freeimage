@@ -1,44 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
 project(freeimage CXX)
 
-#set(VERSION "1.2.11")
-
-#option(ASM686 "Enable building i686 assembly implementation")
-#option(AMD64 "Enable building amd64 assembly implementation")
-
-#set(INSTALL_BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Installation directory for executables")
-#set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE PATH "Installation directory for libraries")
-#set(INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "Installation directory for headers")
-#set(INSTALL_MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Installation directory for manual pages")
-#set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
-
-#include(CheckTypeSize)
-#include(CheckFunctionExists)
-#include(CheckIncludeFile)
-#include(CheckCSourceCompiles)
-#enable_testing()
 
 if (MSVC)
-    #set(CMAKE_DEBUG_POSTFIX "d")
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
     add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 endif ()
 
-
-#set(ZLIB_PC ${CMAKE_CURRENT_BINARY_DIR}/zlib.pc)
-#configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/zlib.pc.cmakein
-#		${ZLIB_PC} @ONLY)
-#configure_file(	${CMAKE_CURRENT_SOURCE_DIR}/zconf.h.cmakein
-#		${CMAKE_CURRENT_BINARY_DIR}/zconf.h @ONLY)
-#include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_SOURCE_DIR})
-
-
-#set(IDN_PUBLIC_HDRS
-#   idn/idna.h
-#)
-
-#target_include_directories(idn PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 
 list(APPEND library_source
@@ -148,6 +117,8 @@ list(APPEND library_source
         Source/ToneMapping.h
         Source/Utilities.h
         Source/FreeImageToolkit/Resize.h
+
+        Source/FreeImage/jxr_init_guid.c
 )
 
 list(APPEND library_references
@@ -155,22 +126,26 @@ list(APPEND library_references
         jxr
         openexr
         openjpeg
+        png
         tiff4
         zlib
         rawlite
+        webp
 )
 
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
 
-target_link_libraries(${PROJECT_NAME} ${library_references})
 
+target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H INITGUID)
 if(MSVC)
     target_compile_definitions(${PROJECT_NAME} PRIVATE OPENEXR_DLL)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE FREEIMAGE_EXPORTS)
+    list(APPEND library_references Windowscodecs)
 endif()
 
+target_link_libraries(${PROJECT_NAME} ${library_references})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
