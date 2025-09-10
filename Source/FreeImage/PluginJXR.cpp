@@ -440,7 +440,7 @@ GetOutputPixelFormat(FIBITMAP *dib, PKPixelFormatGUID *guid_format, BOOL *bHasAl
       break;
    }
 
-   return (*guid_format != GUID_PKPixelFormatDontCare) ? WMP_errSuccess : WMP_errUnsupportedFormat;
+   return IsEqualGUID(*guid_format, GUID_PKPixelFormatDontCare) ? WMP_errSuccess : WMP_errUnsupportedFormat;
 }
 
 // ==========================================================

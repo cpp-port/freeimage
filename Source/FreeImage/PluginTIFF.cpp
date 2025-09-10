@@ -203,17 +203,17 @@ TIFFFdOpen(thandle_t handle, const char *name, const char *mode)
 
    return tif;
 }
-
-/**
-Open a TIFF file for reading or writing
-@param name
-@param mode
-*/
-TIFF*
-TIFFOpen(const char* name, const char* mode)
-{
-   return 0;
-}
+//
+///**
+//Open a TIFF file for reading or writing
+//@param name
+//@param mode
+//*/
+//TIFF*
+//TIFFOpen(const char* name, const char* mode)
+//{
+//   return 0;
+//}
 
 
 
