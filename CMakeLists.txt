@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(freeimage CXX)
+project(port_freeimage CXX)
 
 
 if (MSVC)
@@ -122,19 +122,26 @@ list(APPEND library_source
 )
 
 list(APPEND library_references
-        jpeg
-        jxr
-        openexr
-        openjpeg
-        png
-        tiff4
-        zlib
-        rawlite
-        webp
+        port_jpeg
+        port_jxr
+        port_openexr
+        port_openjpeg
+        port_png
+        port_tiff4
+        port_rawlite
+        port_webp
 )
 
 
-add_library(${PROJECT_NAME} SHARED ${library_source})
+if(${LINUX})
+    list(APPEND library_references z)
+else()
+    list(APPEND library_references zlib)
+endif()
+
+
+add_library(${PROJECT_NAME} SHARED ${library_source}
+   include/FreeImage/StricterUtilities.h)
 
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)

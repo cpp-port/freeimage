@@ -37,9 +37,9 @@
 
 #include "FreeImage.h"
 #include "Utilities.h"
-#include "tiff4/tiffiop.h"
+#include "../../../port_tiff4/include/port_tiff4/tiffiop.h"
 #include "../Metadata/FreeImageTag.h"
-#include "openexr/half.h"
+#include "port_openexr/half.h"
 
 #include "FreeImageIO.h"
 #include "PSDParser.h"

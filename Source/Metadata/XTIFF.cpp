@@ -29,7 +29,7 @@
 #pragma warning (disable : 4786) // identifier was truncated to 'number' characters
 #endif
 
-#include "../tiff4/tiffiop.h"
+#include "port_tiff4/tiffiop.h"
 
 #include "FreeImage.h"
 #include "Utilities.h"

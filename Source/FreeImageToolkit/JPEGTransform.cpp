@@ -24,19 +24,20 @@
 #include "config.h"
 
 extern "C" {
-#define XMD_H
+//#define XMD_H
 #undef FAR
 #include <setjmp.h>
-#include <stddef.h>
-#include <stdio.h>
-//#include "jinclude.h"
-#include "jpeglib.h"
-#include "jerror.h"
-//#include "transupp.h"
+//#include <stddef.h>
+//#include <stdio.h>
+#define JPEG_INTERNALS
+#include "port_jpeg/jinclude.h"
+#include "port_jpeg/jpeglib.h"
+#include "port_jpeg/jerror.h"
+#include "port_jpeg/transupp.h"
 }
 
 #include "FreeImage.h"
-#include "Utilities.h"
+#include "StricterUtilities.h"
 #include "FreeImageIO.h"
 
 // ----------------------------------------------------------

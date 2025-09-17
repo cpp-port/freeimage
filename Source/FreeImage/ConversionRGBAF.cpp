@@ -3,7 +3,7 @@
 //
 // Design and implementation by
 // - Tanner Helland (tannerhelland@users.sf.net)
-// - Hervé Drolon (drolon@infonie.fr)
+// - Hervï¿½ Drolon (drolon@infonie.fr)
 //
 // This file is part of FreeImage 3
 //
@@ -22,6 +22,7 @@
 
 #include "FreeImage.h"
 #include "Utilities.h"
+
 
 // ----------------------------------------------------------
 //   smart convert X to RGBAF
