@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="ASanStaticDebug|Win32">
+      <Configuration>ASanStaticDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ASanStaticDebug|x64">
+      <Configuration>ASanStaticDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|Win32">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|x64">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|Win32">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|x64">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>png</ProjectName>
+    <ProjectGuid>{7DB10B50-CE00-4D7A-B322-6824F05D2FCB}</ProjectGuid>
+    <RootNamespace>png</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <EnableASAN>true</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|Win32'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|x64'">
+    <OutDir>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>/d2ssa-cse-  </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>/d2ssa-cse-  </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <OmitFramePointers>false</OmitFramePointers>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(RootParentDirOperatingSystem)storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <OmitFramePointers>false</OmitFramePointers>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASanStaticDebug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(__operating_system)third-windows/$(PlatformName)/$(Configuration)/include;$(__operating_system)third-windows/include;$(__operating_system)third-windows/third/include;$(__operating_system)third-windows/third/include/include;$(SolutionDir)../../../operating_system/operating_system-windows/_include;$(SolutionDir)../../../operating_system/operating_system-windows;$(SolutionDir)../../../operating_system/operating_system-windows_common;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;.;$(IntDir);$(SolutionDir)../../../;$(SolutionDir)../../../source;$(SolutionDir)../../../source/app;$(ProjectDir)../..;$(ProjectDir)../../;$(ProjectDir)../;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <OpenMPSupport>false</OpenMPSupport>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(IntDir)%(RelativeDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <CompileAsManaged>false</CompileAsManaged>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <OmitFramePointers>false</OmitFramePointers>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <EnableModules>false</EnableModules>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\;$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\library\;$(SolutionDir)..\..\..\time\$(PlatformName)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <ImportLibrary>$(SolutionDir)..\..\operating_system\storage-windows\$(PlatformName)\$(Configuration)\third\library\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="png.c" />
+    <ClCompile Include="pngerror.c" />
+    <ClCompile Include="pngget.c" />
+    <ClCompile Include="pngmem.c" />
+    <ClCompile Include="pngpread.c" />
+    <ClCompile Include="pngread.c" />
+    <ClCompile Include="pngrio.c" />
+    <ClCompile Include="pngrtran.c" />
+    <ClCompile Include="pngrutil.c" />
+    <ClCompile Include="pngset.c" />
+    <ClCompile Include="pngtrans.c" />
+    <ClCompile Include="pngwio.c" />
+    <ClCompile Include="pngwrite.c" />
+    <ClCompile Include="pngwtran.c" />
+    <ClCompile Include="pngwutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="png.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\base\zlib\zlib.vcxproj">
+      <Project>{34fcfbf1-e922-4fdc-bc83-b3c04623e8c2}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\png.h" />
+    <ClInclude Include="include\png\pngdebug.h" />
+    <ClInclude Include="include\png\pnginfo.h" />
+    <ClInclude Include="include\png\pngprefix.h" />
+    <ClInclude Include="include\png\pngpriv.h" />
+    <ClInclude Include="include\png\pngstruct.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C07D1D57-669A-4302-B835-EA52557F15C8}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>3.0</ApplicationTypeRevision>
+    <ProjectName>jpeg</ProjectName>
+    <RootNamespace>port</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
+    <UseOfStl>c++_static</UseOfStl>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseOfStl>c++_static</UseOfStl>
+    <ThumbMode>Disabled</ThumbMode>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
+    <UseOfStl>c++_static</UseOfStl>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UseOfStl>c++_static</UseOfStl>
+    <ThumbMode>Disabled</ThumbMode>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Import Project="..\..\..\operating_system\operating_system-android\port.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="..\..\..\operating_system\operating_system-android\port.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <Import Project="..\..\..\operating_system\operating_system-android\port.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="..\..\..\operating_system\operating_system-android\port.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(__operating_system)third-android\include;$(SolutionDir)../../operating_system-android/platform_configuration/$(Platform)/$(Configuration);$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../operating_system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir);$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../..;$(ProjectDir)../freeimage/Source;Source\DeprecationManager;Source\LibJPEG;Source\LibRawLite;Source\OpenEXR;Source\OpenEXR\Half;Source\OpenEXR\Iex;Source\OpenEXR\IlmImf;Source\OpenEXR\Imath;Source\OpenEXR\IlmThread;Source\LibJXR\jxrgluelib;Source\LibJXR\image\sys;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NO_LCMS;NO_JASPER;USE_JPIP;OPJ_STATIC</PreprocessorDefinitions>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)storage-android\third\library\$(Platform)\$(Configuration)\;$(__operating_system)storage-android\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <AdditionalIncludeDirectories>$(__operating_system)third-android\include;$(SolutionDir)../../operating_system-android/platform_configuration/$(Platform)/$(Configuration);$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../operating_system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir);$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../..;$(ProjectDir)../freeimage/Source;Source\DeprecationManager;Source\LibJPEG;Source\LibRawLite;Source\OpenEXR;Source\OpenEXR\Half;Source\OpenEXR\Iex;Source\OpenEXR\IlmImf;Source\OpenEXR\Imath;Source\OpenEXR\IlmThread;Source\LibJXR\jxrgluelib;Source\LibJXR\image\sys;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NO_LCMS;NO_JASPER;USE_JPIP;OPJ_STATIC</PreprocessorDefinitions>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)storage-android\third\library\$(Platform)\$(Configuration)\;$(__operating_system)storage-android\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>ace;log;android;$(StlLibraryName)</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <AdditionalIncludeDirectories>$(__operating_system)third-android\include;$(SolutionDir)../../operating_system-android/platform_configuration/$(Platform)/$(Configuration);$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../operating_system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir);$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../..;$(ProjectDir)../freeimage/Source;Source\DeprecationManager;Source\LibJPEG;Source\LibRawLite;Source\OpenEXR;Source\OpenEXR\Half;Source\OpenEXR\Iex;Source\OpenEXR\IlmImf;Source\OpenEXR\Imath;Source\OpenEXR\IlmThread;Source\LibJXR\jxrgluelib;Source\LibJXR\image\sys;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PreprocessorDefinitions>NO_LCMS;NO_JASPER;USE_JPIP;OPJ_STATIC</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)storage-android\third\library\$(Platform)\$(Configuration)\;$(__operating_system)storage-android\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>ace;log;android;$(StlLibraryName)</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <AdditionalIncludeDirectories>$(__operating_system)third-android\include;$(SolutionDir)../../operating_system-android/platform_configuration/$(Platform)/$(Configuration);$(__sensitive)/sensitive/include;$(SolutionDir)../../../source/include;$(SolutionDir)../../operating_system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/port/include;$(SolutionDir)../../../source/port;$(ProjectDir);$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../..;$(ProjectDir)../freeimage/Source;Source\DeprecationManager;Source\LibJPEG;Source\LibRawLite;Source\OpenEXR;Source\OpenEXR\Half;Source\OpenEXR\Iex;Source\OpenEXR\IlmImf;Source\OpenEXR\Imath;Source\OpenEXR\IlmThread;Source\LibJXR\jxrgluelib;Source\LibJXR\image\sys;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <PreprocessorDefinitions>NO_LCMS;NO_JASPER;USE_JPIP;OPJ_STATIC</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)storage-android\third\library\$(Platform)\$(Configuration)\;$(__operating_system)storage-android\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>log;android;$(StlLibraryName)</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="axisjpeg.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cdjpeg.c" />
+    <ClCompile Include="jaricom.c" />
+    <ClCompile Include="jcapimin.c" />
+    <ClCompile Include="jcapistd.c" />
+    <ClCompile Include="jcarith.c" />
+    <ClCompile Include="jccoefct.c" />
+    <ClCompile Include="jccolor.c" />
+    <ClCompile Include="jcdctmgr.c" />
+    <ClCompile Include="jchuff.c" />
+    <ClCompile Include="jcinit.c" />
+    <ClCompile Include="jcmainct.c" />
+    <ClCompile Include="jcmarker.c" />
+    <ClCompile Include="jcmaster.c" />
+    <ClCompile Include="jcomapi.c" />
+    <ClCompile Include="jcparam.c" />
+    <ClCompile Include="jcprepct.c" />
+    <ClCompile Include="jcsample.c" />
+    <ClCompile Include="jctrans.c" />
+    <ClCompile Include="jdapimin.c" />
+    <ClCompile Include="jdapistd.c" />
+    <ClCompile Include="jdarith.c" />
+    <ClCompile Include="jdatadst.c" />
+    <ClCompile Include="jdatasrc.c" />
+    <ClCompile Include="jdcoefct.c" />
+    <ClCompile Include="jdcolor.c" />
+    <ClCompile Include="jddctmgr.c" />
+    <ClCompile Include="jdhuff.c" />
+    <ClCompile Include="jdinput.c" />
+    <ClCompile Include="jdmainct.c" />
+    <ClCompile Include="jdmarker.c" />
+    <ClCompile Include="jdmaster.c" />
+    <ClCompile Include="jdmerge.c" />
+    <ClCompile Include="jdpostct.c" />
+    <ClCompile Include="jdsample.c" />
+    <ClCompile Include="jdtrans.c" />
+    <ClCompile Include="jerror.c" />
+    <ClCompile Include="jfdctflt.c" />
+    <ClCompile Include="jfdctfst.c" />
+    <ClCompile Include="jfdctint.c" />
+    <ClCompile Include="jidctflt.c" />
+    <ClCompile Include="jidctfst.c" />
+    <ClCompile Include="jidctint.c" />
+    <ClCompile Include="jmemansi.c" />
+    <ClCompile Include="jmemmgr.c" />
+    <ClCompile Include="jquant1.c" />
+    <ClCompile Include="jquant2.c" />
+    <ClCompile Include="jutils.c" />
+    <ClCompile Include="rdbmp.c" />
+    <ClCompile Include="rdcolmap.c" />
+    <ClCompile Include="rdgif.c" />
+    <ClCompile Include="rdppm.c" />
+    <ClCompile Include="rdrle.c" />
+    <ClCompile Include="rdswitch.c" />
+    <ClCompile Include="rdtarga.c" />
+    <ClCompile Include="transupp.c" />
+    <ClCompile Include="wrbmp.c" />
+    <ClCompile Include="wrgif.c" />
+    <ClCompile Include="wrppm.c" />
+    <ClCompile Include="wrrle.c" />
+    <ClCompile Include="wrtarga.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
