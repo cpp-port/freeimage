@@ -68,19 +68,19 @@ public:
 
    int read(void *buffer, size_t size, size_t count)
    {
-      if(substream) return substream->read(buffer, size, count);
+      //if(substream) return substream->read(buffer, size, count);
       return _io->read_proc(buffer, (unsigned)size, (unsigned)count, _handle);
    }
 
    int seek(INT64 offset, int origin)
    {
-      if(substream) return substream->seek(offset, origin);
+      //if(substream) return substream->seek(offset, origin);
       return _io->seek_proc(_handle, (long)offset, origin);
    }
 
    INT64 tell()
    {
-      if(substream) return substream->tell();
+      //if(substream) return substream->tell();
       return _io->tell_proc(_handle);
    }
 
@@ -92,14 +92,14 @@ public:
    int get_char()
    {
       int c = 0;
-      if(substream) return substream->get_char();
+      //if(substream) return substream->get_char();
       if(!_io->read_proc(&c, 1, 1, _handle)) return -1;
       return c;
    }
 
    char* gets(char *buffer, int length)
    {
-      if (substream) return substream->gets(buffer, length);
+      //if (substream) return substream->gets(buffer, length);
       memset(buffer, 0, length);
       for(int i = 0; i < length; i++)
       {
@@ -116,7 +116,7 @@ public:
       std::string buffer;
       char element = 0;
       bool bDone = false;
-      if(substream) return substream->scanf_one(fmt,val);
+      //if(substream) return substream->scanf_one(fmt,val);
       do
       {
          if(_io->read_proc(&element, 1, 1, _handle) == 1)
@@ -146,7 +146,7 @@ public:
 
    int eof()
    {
-      if(substream) return substream->eof();
+      //if(substream) return substream->eof();
       return (_io->tell_proc(_handle) >= _eof);
    }
 
@@ -793,7 +793,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data)
       // --------------------------------------------
 
       // (-s [0..N-1]) Select one raw image from input file
-      RawProcessor->imgdata.params.shot_select = 0;
+      RawProcessor->imgdata.rawparams.shot_select = 0;
       // (-w) Use camera white balance, if possible (otherwise, fallback to auto_wb)
       RawProcessor->imgdata.params.use_camera_wb = 1;
       // (-M) Use any color matrix from the camera metadata. This option only affects Olympus, Leaf, and Phase One cameras.

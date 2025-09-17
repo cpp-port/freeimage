@@ -27,11 +27,12 @@ extern "C" {
 #define XMD_H
 #undef FAR
 #include <setjmp.h>
-
-#include "jinclude.h"
+#include <stddef.h>
+#include <stdio.h>
+//#include "jinclude.h"
 #include "jpeglib.h"
 #include "jerror.h"
-#include "transupp.h"
+//#include "transupp.h"
 }
 
 #include "FreeImage.h"

@@ -22,7 +22,7 @@
 #include "zlib.h"
 #include "FreeImage.h"
 #include "Utilities.h"
-#include "zutil.h"	/* must be the last header because of error C3163 in VS2008 (_vsnprintf defined in stdio.h) */
+//#include "zutil.h"	/* must be the last header because of error C3163 in VS2008 (_vsnprintf defined in stdio.h) */
 
 /**
 Compresses a source buffer into a target buffer, using the ZLib library.
@@ -103,6 +103,16 @@ which must be at least 0.1% larger than source_size plus 24 bytes.
 @return Returns the actual size of the compressed buffer, returns 0 if an error occured
 @see FreeImage_ZLibCompress
 */
+
+#if defined(_WIN32) || defined(_WIN64)
+#define OS_CODE 0  // Windows
+#elif defined(__unix__) || defined(__linux__)
+#define OS_CODE 3  // Unix/Linux
+#else
+#define OS_CODE 255  // Unknown or custom
+#endif
+
+
 DWORD DLL_CALLCONV
 FreeImage_ZLibGZip(BYTE *target, DWORD target_size, BYTE *source, DWORD source_size)
 {
