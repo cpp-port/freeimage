@@ -19,7 +19,7 @@
 // Use at your own risk!
 // ==========================================================
 #include "config.h"
-#include "libraw/libraw.h"
+#include "port_rawlite/libraw.h"
 
 #include "FreeImage.h"
 #include "Utilities.h"
@@ -793,7 +793,7 @@ Load(FreeImageIO *io, fi_handle handle, int page, int flags, void *data)
       // --------------------------------------------
 
       // (-s [0..N-1]) Select one raw image from input file
-      RawProcessor->imgdata.rawparams.shot_select = 0;
+      RawProcessor->imgdata.params.shot_select = 0;
       // (-w) Use camera white balance, if possible (otherwise, fallback to auto_wb)
       RawProcessor->imgdata.params.use_camera_wb = 1;
       // (-M) Use any color matrix from the camera metadata. This option only affects Olympus, Leaf, and Phase One cameras.
