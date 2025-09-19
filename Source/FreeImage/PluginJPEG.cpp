@@ -27,7 +27,7 @@
 // ==========================================================
 
 
-#include "config.h"
+#include "port_jpeg/config.h"
 
 
 #ifdef _MSC_VER
@@ -35,13 +35,20 @@
 #endif
 
 extern "C" {
-#define XMD_H
-#undef FAR
 #include <setjmp.h>
 
+#if defined(HAS_SYSTEM_JPEG)
+#include <stdlib.h>
+#include <stdio.h>
+#include <jpeglib.h>
+#include <jerror.h>
+#else
+#define XMD_H
+#undef FAR
 #include "port_jpeg/jinclude.h"
 #include "port_jpeg/jpeglib.h"
 #include "port_jpeg/jerror.h"
+#endif
 }
 
 #include "FreeImage.h"
@@ -520,6 +527,8 @@ marker_is_icc(jpeg_saved_marker_ptr marker)
    return FALSE;
 }
 
+#if !defined(HAS_SYSTEM_JPEG)
+
 // /**
 //   See if there was an ICC profile in the JPEG file being read;
 //   if so, reassemble and return the profile data.
@@ -641,6 +650,8 @@ jpeg_read_icc_profile(j_decompress_ptr cinfo, JOCTET **icc_data_ptr, unsigned *i
 
    return TRUE;
 }
+
+#endif
 
 /**
 	Read JPEG_APPD marker (IPTC or Adobe Photoshop profile)

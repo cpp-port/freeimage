@@ -121,8 +121,16 @@ list(APPEND library_source
         Source/FreeImage/jxr_init_guid.c
 )
 
+
+if(${HAS_SYSTEM_JPEG})
+    set(jpeg_library jpeg)
+else()
+    set(jpeg_library port_jpeg)
+endif()
+
+
 list(APPEND library_references
-        port_jpeg
+        ${jpeg_library}
         port_jxr
         port_openexr
         port_openjpeg
